@@ -1,0 +1,21 @@
+{
+    "name": "gameframe",
+    "version": "1.0.0",
+    "author": "Vlad Filip ( vlad.filip.dev@gmail.com )",
+    "description": "",
+    "license": "MIT",
+    "engines": {
+        "npm": ">=3.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vladfilipro/gameframe.git"
+    },
+    "bugs": {
+        "url": "https://github.com/vladfilipro/gameframe/issues"
+    },
+    "main": "./src/index.js",
+    "dependencies": {
+        "sprockets": "https://github.com/vladfilipro/sprockets.git"
+    }
+}
