@@ -1,4 +1,4 @@
 'use strict'
 
-const GameFrame = require( './gameframe' )
-module.exports = window.gameframe = new GameFrame( window )
+const GameFrame = require( './gf' )
+module.exports = window.gameframe = GameFrame
