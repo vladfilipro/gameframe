@@ -1,6 +1,5 @@
 'use strict'
 
-module.exports = {
-  lock: () => {
-  }
+module.exports = function ( container ) {
+
 }

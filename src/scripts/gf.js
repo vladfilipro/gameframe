@@ -1,6 +1,7 @@
 'use strict'
 
 let viewport = require( './options/viewport' )
+let screen = require( './options/screen' )
 
 module.exports = {
   debug: function () {
