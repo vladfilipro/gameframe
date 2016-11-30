@@ -1,7 +1,6 @@
 html, body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
     height: 100%;
     width: 100%;
     position: relative;
@@ -12,4 +11,23 @@ html, body {
     width: 100%;
     height: 100%;
     overflow: auto;
+}
+
+.gameframe-extension {
+    width: 100%;
+    height: 50px;
+    display: block;
+    position: relative;
+    bottom: 0px;
+    background-color: #F00;
+}
+
+.gameframe-overlay {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.8);
 }

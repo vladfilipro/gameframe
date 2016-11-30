@@ -1,17 +1,15 @@
 'use strict'
 
-let viewport = require( './options/viewport' )
-let screen = require( './options/screen' )
+const viewport = require( './options/viewport' )
+const Screen = require( './options/screen' )
+const frame = require( './options/frame' )
+
+let screen
 
 module.exports = {
-  debug: function () {
-    if ( !viewport.exists() ) {
-      console.warn( 'Viewport metatag does not exist' )
-    } else {
-      console.log( 'Check - viewport metatag - ok' )
-    }
-  },
   init: function () {
     viewport.add()
+    screen = new Screen()
+    screen.addExtension()
   }
 }
