@@ -4,7 +4,7 @@ const head = () => window.document.getElementsByTagName('head')[0]
 
 const exists = () => !!head().querySelector( 'meta[name="viewport"]' )
 
-module.exports = {
+let viewport = {
   add: () => {
     if ( !exists() ) {
       let tag = window.document.createElement( 'meta' )
@@ -27,3 +27,5 @@ module.exports = {
   },
   exists: exists
 }
+
+export { viewport }

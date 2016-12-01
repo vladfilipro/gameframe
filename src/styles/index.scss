@@ -6,28 +6,19 @@ html, body {
     position: relative;
 }
 
-#gameframe {
+.gameframe {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: calc(100% + 100px);
     overflow: auto;
 }
 
-.gameframe-extension {
-    width: 100%;
-    height: 50px;
-    display: block;
-    position: relative;
-    bottom: 0px;
-    background-color: #F00;
-}
-
 .gameframe-overlay {
-    display: none;
-    position: absolute;
     width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.8);
+    height: 200%;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #F00;
 }

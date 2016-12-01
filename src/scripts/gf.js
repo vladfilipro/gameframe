@@ -1,15 +1,17 @@
 'use strict'
 
-const viewport = require( './options/viewport' )
-const Screen = require( './options/screen' )
-const frame = require( './options/frame' )
+import { viewport } from './options/viewport'
+import { Ios } from './options/screen/ios'
 
 let screen
+
+const config = {
+  fullscreen: true
+}
 
 module.exports = {
   init: function () {
     viewport.add()
-    screen = new Screen()
-    screen.addExtension()
+    screen = new Ios( config )
   }
 }
