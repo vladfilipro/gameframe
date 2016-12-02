@@ -9,7 +9,7 @@ let viewport = {
     if ( !exists() ) {
       let tag = window.document.createElement( 'meta' )
       tag.setAttribute( 'name', 'viewport' )
-      tag.setAttribute( 'content', 'width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0' )
+      tag.setAttribute( 'content', 'width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui' )
       head().appendChild( tag )
     } else {
       console.warn( 'Viewport metatag already exists' )

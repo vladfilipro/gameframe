@@ -1,0 +1,16 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.gameframe {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-image: url('http://media.istockphoto.com/photos/blank-abstract-light-watercolor-background-isolated-on-white-picture-id520976858?k=6&m=520976858&s=170667a&w=0&h=HWKMj55Q4XfDqdkMOG58b2bEhQitV5FZ0ivJzn7jJPc=');
+    background-size: 100% 100%;
+}

@@ -1,24 +1,6 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    position: relative;
-}
+@import "mixins.scss";
 
-.gameframe {
-    position: relative;
-    width: 100%;
-    height: calc(100% + 100px);
-    overflow: auto;
-}
+@import "defaults.scss";
 
-.gameframe-overlay {
-    width: 100%;
-    height: 200%;
-    display: block;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    background-color: #F00;
-}
+@import "device/ios.scss";
+@import "device/desktop.scss";
