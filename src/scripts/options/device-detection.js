@@ -4,22 +4,22 @@
  *
  * @returns {String}
  */
-export function getDevice() {
-  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+export function getDevice () {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera
 
       // Windows Phone must come first because its UA also contains 'Android'
-    if (/windows phone/i.test(userAgent)) {
-        return 'wp';
-    }
+  if ( /windows phone/i.test( userAgent ) ) {
+    return 'wp'
+  }
 
-    if (/android/i.test(userAgent)) {
-        return 'andriod';
-    }
+  if ( /android/i.test( userAgent ) ) {
+    return 'andriod'
+  }
 
     // iOS detection from: http://stackoverflow.com/a/9039885/177710
-    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        return 'ios';
-    }
+  if ( /iPad|iPhone|iPod/.test( userAgent ) && !window.MSStream ) {
+    return 'ios'
+  }
 
-    return 'desktop';
+  return 'desktop'
 }

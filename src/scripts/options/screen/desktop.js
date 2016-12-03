@@ -1,7 +1,5 @@
-'use strict';
+'use strict'
 
 export function Desktop ( screen ) {
-
-    return screen;
-    
+  return screen
 }

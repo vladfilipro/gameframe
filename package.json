@@ -17,5 +17,8 @@
     "main": "./src/index.js",
     "dependencies": {
         "sprockets": "https://github.com/vladfilipro/sprockets.git"
+    },
+    "scripts": {
+        "test": "sprockets build-test"
     }
 }

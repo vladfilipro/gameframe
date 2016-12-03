@@ -1,6 +1,6 @@
 'use strict'
 
-const head = () => window.document.getElementsByTagName('head')[0]
+const head = () => window.document.getElementsByTagName( 'head' )[0]
 
 const exists = () => !!head().querySelector( 'meta[name="viewport"]' )
 
