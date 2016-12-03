@@ -14,7 +14,7 @@
     "bugs": {
         "url": "https://github.com/vladfilipro/gameframe/issues"
     },
-    "main": "./src/index.js",
+    "main": "./gameframe.js",
     "dependencies": {
         "sprockets": "https://github.com/vladfilipro/sprockets.git"
     },
