@@ -74,7 +74,7 @@ body.ios {
     &.allow-portrait {
         @media all and (orientation:portrait) {
             .gameframe {
-                height: calc(100% + 50px);
+                height: calc(100% + 70px);
             }
             .gameframe-locked {
                 display: none;
