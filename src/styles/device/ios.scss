@@ -23,6 +23,7 @@ body.ios {
         top: 0px;
         left: 0px;
         background-color: #000;
+        z-index: 10001
 
         img {
             display: block;
@@ -43,7 +44,7 @@ body.ios {
     .gameframe-locked {
         display: flex;
         align-items: center;
-        z-index: 5000;
+        z-index: 10002;
         width: 100%;
         height: 100%;
         position: absolute;
