@@ -1,15 +1,15 @@
 @include keyframes(scroll-up) {
-  0% { transform: translate3d(0,0,0) }
-  70%, 100% { transform: translate3d(0,-50%,0) }
+  0% { @include transform ( translate3d(0,0,0) ) }
+  70%, 100% { @include transform ( translate3d(0,-50%,0) ) }
 }
 
 @include keyframes(rotate-to-landscape) {
-  0% { transform: rotate3d(0,0,1,0deg) }
-  70%, 100% { transform: rotate3d(0,0,1,90deg) }
+  0% { @include transform ( rotate3d(0,0,1,0deg) ) }
+  70%, 100% { @include transform ( rotate3d(0,0,1,90deg) ) }
 }
 @include keyframes(rotate-to-portrait) {
-  0% { transform: rotate3d(0,0,1,90deg) }
-  70%, 100% { transform: rotate3d(0,0,1,0deg) }
+  0% { @include transform ( rotate3d(0,0,1,90deg) ) }
+  70%, 100% { @include transform ( rotate3d(0,0,1,0deg) ) }
 }
 
 body.ios {
