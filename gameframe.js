@@ -1,9 +1,7 @@
 'use strict'
 
-const path = require( 'path' )
-
 module.exports = exports = {
-  'scripts': path.resolve( './build/scripts' ) + '/app.js',
-  'styles': path.resolve( './build/styles' ) + '/app.css',
-  'html': path.resolve( './build' ) + '/index.html'
+  'scripts': __dirname + '/build/scripts/app.js',
+  'styles': __dirname + '/build/styles/app.css',
+  'html': __dirname + '/build/index.html'
 }
