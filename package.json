@@ -19,6 +19,7 @@
         "sprockets": "https://github.com/vladfilipro/sprockets.git"
     },
     "scripts": {
-        "postinstall": "sprockets build-test"
+        "test": "sprockets build-test",
+        "postinstall": "sprockets index && sprockets js && sprockets scss"
     }
 }
