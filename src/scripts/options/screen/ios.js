@@ -21,11 +21,7 @@ export function Ios ( screen ) {
   }
 
   // If the user scrolls to the point where bars disappear
-  if ( screen.prevOrientation === screen.getOrientation() && screen.prevHeight < window.innerHeight ) {
-    screen.showOverlay( false )
-  }
-  // If the user gives bars visibility
-  if ( screen.prevOrientation === screen.getOrientation() && screen.prevHeight > window.innerHeight ) {
+  if ( screen.getOrientation() === 'portrait' ) {
     screen.showOverlay( true )
   }
 
