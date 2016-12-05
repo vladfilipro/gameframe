@@ -21,6 +21,11 @@ export function Ios ( screen ) {
   }
 
   window.addEventListener( 'resize', function () {
+      // If the user scrolls to the point where bars disappear
+    if ( screen.getOrientation() === 'portrait' ) {
+      screen.showOverlay( true )
+    }
+
         // If the user scrolls to the point where bars disappear
     if ( screen.prevOrientation === screen.getOrientation() && screen.prevHeight < window.innerHeight ) {
       screen.showOverlay( false )
@@ -31,7 +36,7 @@ export function Ios ( screen ) {
     }
 
         // Because rotation into portrait will always show bars
-    if ( screen.getOrientation() === 'portrait' ) {
+    if ( screen.prevOrientation !== screen.getOrientation() && screen.getOrientation() === 'portrait' ) {
       screen.showOverlay( true )
     }
         // Because rotation into landscape will always hide bars
