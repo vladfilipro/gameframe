@@ -9,7 +9,6 @@ import { Ios } from './screen/ios'
 
 let Screen = function ( config ) {
   config = config || {}
-  let self = this
 
   this.configuration = {
     device: config.device || getDevice(),
@@ -32,12 +31,6 @@ let Screen = function ( config ) {
   this.prevWidth = window.innerWidth
   this.prevHeight = window.innerHeight
   this.prevOrientation = this.getOrientation()
-
-  window.addEventListener( 'resize', function () {
-    self.body.classList.remove( 'portrait' )
-    self.body.classList.remove( 'landscape' )
-    self.body.classList.add( self.getOrientation() )
-  } )
 
   switch ( this.configuration.device ) {
     case 'desktop':
@@ -81,7 +74,11 @@ Screen.prototype.scrollLock = function ( on ) {
 }
 
 Screen.prototype.getOrientation = function () {
-  return ( window.innerWidth > window.innerHeight ) ? 'landscape' : 'portrait'
+  let orientation = ( window.innerWidth > window.innerHeight ) ? 'landscape' : 'portrait'
+  this.body.classList.remove( 'portrait' )
+  this.body.classList.remove( 'landscape' )
+  this.body.classList.add( orientation )
+  return orientation
 }
 
 export { Screen }
