@@ -6,6 +6,7 @@ import { Frame } from './frame'
 
 import { Desktop } from './screen/desktop'
 import { Ios } from './screen/ios'
+import { Android } from './screen/android'
 
 let Screen = function ( config ) {
   config = config || {}
@@ -37,7 +38,7 @@ let Screen = function ( config ) {
       Desktop( this )
       break
     case 'android':
-      Desktop( this )
+      Android( this )
       break
     case 'ios':
       Ios( this )

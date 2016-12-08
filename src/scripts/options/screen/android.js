@@ -1,6 +1,6 @@
 'use strict'
 
-export function Desktop ( screen ) {
+export function Android ( screen ) {
   window.addEventListener( 'resize', function () {
     screen.prevWidth = window.innerWidth
     screen.prevHeight = window.innerHeight
