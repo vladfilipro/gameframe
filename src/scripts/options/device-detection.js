@@ -13,7 +13,7 @@ export function getDevice () {
   }
 
   if ( /android/i.test( userAgent ) ) {
-    return 'andriod'
+    return 'android'
   }
 
     // iOS detection from: http://stackoverflow.com/a/9039885/177710
