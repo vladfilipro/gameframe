@@ -9,6 +9,8 @@ import { Ios } from './screen/ios'
 
 let Screen = function ( config ) {
   config = config || {}
+  let self = this
+
   this.configuration = {
     device: config.device || getDevice(),
     allowLandscape: ( typeof config.allowLandscape === 'boolean' ) ? config.allowLandscape : true,
@@ -31,8 +33,17 @@ let Screen = function ( config ) {
   this.prevHeight = window.innerHeight
   this.prevOrientation = this.getOrientation()
 
+  window.addEventListener( 'resize', function () {
+    self.body.classList.remove( 'portrait' )
+    self.body.classList.remove( 'landscape' )
+    self.body.classList.add( self.getOrientation() )
+  } )
+
   switch ( this.configuration.device ) {
     case 'desktop':
+      Desktop( this )
+      break
+    case 'android':
       Desktop( this )
       break
     case 'ios':
