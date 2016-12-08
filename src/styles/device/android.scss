@@ -10,32 +10,6 @@
 
 body.android {
 
-    .gameframe-overlay {
-        width: 100%;
-        height: 200%;
-        display: block;
-        text-align: center;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        background-color: #000;
-        z-index: 10001;
-
-        img {
-            display: block;
-            position: relative;
-            width: 0%;
-            top: 20%;
-            margin: auto;
-            @include invert();
-        }
-
-        img.gameframe-overlay-scroll {
-            width: 20%;
-        }
-
-    }
-
     .gameframe-locked {
         display: flex;
         align-items: center;
@@ -68,9 +42,6 @@ body.android {
 
     &.allow-portrait {
         @media all and (orientation:portrait) {
-            .gameframe {
-                height: calc(100% + 70px);
-            }
             .gameframe-locked {
                 display: none;
             }
@@ -79,9 +50,6 @@ body.android {
 
     &.allow-landscape {
         @media all and (orientation:landscape) {
-            .gameframe {
-                height: calc(100% + 1px);
-            }
             .gameframe-locked {
                 display: none;
             }
