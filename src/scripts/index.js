@@ -1,4 +1,7 @@
 'use strict'
 
-const GameFrame = require( './gf' )
-module.exports = window.gameframe = GameFrame
+import { lock } from './screen-lock.js'
+
+window.gameframe = {
+  lock: lock
+}

@@ -1,35 +1,48 @@
 'use strict'
 
+let path = require( 'path' )
+let HtmlWebpackPlugin = require( 'html-webpack-plugin' )
+
 module.exports = {
-  context: __dirname + '/src',
   entry: {
-    gameframe: './gameframe.js'
+    gameframe: [
+      'babel-polyfill',
+      './src/gameframe.js'
+    ]
   },
   output: {
     path: __dirname + '/build',
-    publicPath: '/',
     filename: '[name].min.js'
   },
   devServer: {
+    publicPath: '/',
+    hot: true,
     contentBase: __dirname + '/build'
   },
   module: {
-    rules: [
+    loaders: [
       {
         test: /\.js$/,
-        exclude: /(node_modules)/,
-        use: [ {
-          loader: 'babel-loader',
-          options: {
-            presets: [ 'es2015', { 'modules': false } ]
-          }
-        } ]
+        include: path.join( __dirname, 'src' ),
+        loader: 'babel-loader',
+        query: {
+          presets: [ 'es2015' ]
+        }
       },
       {
         test: /\.scss$/,
         exclude: /(node_modules)/,
-        use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+        loaders: [ 'style-loader', 'css-loader', 'sass-loader' ]
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loader: 'url-loader?limit=100000'
       }
     ]
-  }
+  },
+  plugins: [ new HtmlWebpackPlugin( {
+    template: './src/index.html'
+  } ) ],
+  debug: true,
+  devtool: 'source-map'
 }
