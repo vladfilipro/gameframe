@@ -1,7 +1,23 @@
 'use strict'
 
-import { lock } from './screen-lock.js'
+import { _window } from './utils/selector.js'
+import { GameFrame } from './gameframe.js'
 
-window.gameframe = {
-  lock: lock
+let initialized = false
+
+let init = () => {
+  if ( !initialized ) {
+    initialized = true
+    _window.gameframe = new GameFrame()
+  }
+}
+
+_window.onpageshow = function ( event ) {
+  if ( event.persisted ) {
+    init()
+  }
+}
+
+_window.onload = function () {
+  init()
 }
