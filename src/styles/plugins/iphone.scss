@@ -1,0 +1,11 @@
+@media all and (orientation: landscape) {
+    section.gameframe {
+        height: calc(100% + 1px);
+    }
+}
+
+@media all and (orientation: portrait) {
+    section.gameframe {
+        height: calc(100% + 70px);
+    }
+}

@@ -30,7 +30,7 @@
     "webpack-dev-server": "^1.16.2"
   },
   "scripts": {
-    "test": "./node_modules/.bin/webpack-dev-server --display-error-details",
+    "test": "./node_modules/.bin/webpack-dev-server",
     "postInstall": "node webpack"
   }
 }

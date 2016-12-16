@@ -8,7 +8,7 @@ let initialized = false
 let init = () => {
   if ( !initialized ) {
     initialized = true
-    _window.gameframe = new GameFrame()
+    _window.gameframe = new GameFrame( 640, 480 )
   }
 }
 

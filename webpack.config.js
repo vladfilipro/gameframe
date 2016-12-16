@@ -17,6 +17,8 @@ module.exports = {
   devServer: {
     publicPath: '/',
     hot: true,
+    host: '0.0.0.0',
+    'display-error-details': true,
     contentBase: __dirname + '/build'
   },
   module: {
