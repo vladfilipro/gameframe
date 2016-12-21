@@ -1,23 +1,19 @@
 'use strict'
 
+let styles = require( './../styles/index.scss' )
+
 import { _window } from './utils/selector.js'
 import { GameFrame } from './gameframe.js'
 
-let initialized = false
-
-let init = () => {
-  if ( !initialized ) {
-    initialized = true
-    _window.gameframe = new GameFrame( 640, 480 )
-  }
-}
+styles.use()
+_window.gameframe = _window.gameframe || new GameFrame()
 
 _window.onpageshow = function ( event ) {
   if ( event.persisted ) {
-    init()
+    _window.gameframe.init()
   }
 }
 
 _window.onload = function () {
-  init()
+  _window.gameframe.init()
 }

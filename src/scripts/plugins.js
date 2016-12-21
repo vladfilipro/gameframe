@@ -28,7 +28,7 @@ export let plugin = () => {
   let deviceDetection = device()
   let type = deviceDetection.type
   let browser = deviceDetection.browser
-  let result
+  let PluginClass
 
   list.forEach( function ( entry ) {
     let typePassed = false
@@ -39,10 +39,24 @@ export let plugin = () => {
     if ( entry.browser.length === 0 || entry.browser.indexOf( browser ) !== -1 ) {
       browserPassed = true
     }
-    if ( typePassed && browserPassed && !result ) {
-      result = entry.plugin
+    if ( typePassed && browserPassed && !PluginClass ) {
+      PluginClass = entry.plugin
     }
   } )
 
-  return result
+  let output = {
+    instance: null,
+    init: ( gameframe ) => {
+      if ( output.instance ) {
+        output.instance.destroy()
+      }
+      output.instance = new PluginClass( gameframe )
+    },
+    destroy: () => {
+      output.instance.destroy()
+      output.instance = null
+    }
+  }
+
+  return output
 }

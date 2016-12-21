@@ -1,5 +1,10 @@
 'use strict'
 
-export let fallback = () => {
-  require( './../../styles/plugins/fallback.scss' )
+export function fallback () {
+  let styles = require( './../../styles/plugins/fallback.scss' )
+  styles.use()
+
+  this.destroy = () => {
+    styles.unuse()
+  }
 }

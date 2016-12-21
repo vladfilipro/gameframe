@@ -34,7 +34,7 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: /(node_modules)/,
-        loaders: [ 'style-loader', 'css-loader', 'sass-loader' ]
+        loaders: [ 'style-loader/useable', 'css-loader', 'sass-loader' ]
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -42,9 +42,11 @@ module.exports = {
       }
     ]
   },
-  plugins: [ new HtmlWebpackPlugin( {
-    template: './src/index.html'
-  } ) ],
+  plugins: [
+    new HtmlWebpackPlugin( {
+      template: './src/index.html'
+    } )
+  ],
   debug: true,
   devtool: 'source-map'
 }

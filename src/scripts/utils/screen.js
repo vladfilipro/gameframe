@@ -11,8 +11,10 @@ let lock = ( on ) => {
   if ( on || on === undefined ) {
     _body.removeEventListener( 'touchmove', mouseMoveLockEvent, true )
     _body.addEventListener( 'touchmove', mouseMoveLockEvent, true )
+    _window.scrollTo( 0, _body.scrollHeight - _window.innerHeight )
   } else {
     _body.removeEventListener( 'touchmove', mouseMoveLockEvent, true )
+    _window.scrollTo( 0, 0 )
   }
 }
 
@@ -38,7 +40,9 @@ let isWide = () => {
 let size = {
   isSquare: isSquare,
   isRectangular: isRectangular,
-  isWide: isWide
+  isWide: isWide,
+  width: () => _window.innerWidth,
+  height: () => _window.innerHeight
 }
 
 let listeners = {}
@@ -59,6 +63,7 @@ let capture = () => {
 }
 let release = () => {
   _window.removeEventListener( 'resize', onChange )
+  listeners = {}
   capturing = false
 }
 

@@ -9,7 +9,7 @@
     align-content: center;
     justify-content: center;
     width: 100%;
-    height: 200%;
+    height: 100%;
 }
 
 @include keyframes(gameframe-overlay-scroll-up) {
@@ -26,7 +26,7 @@
         width: 100px;
         left: 50%;
         margin-left: -50px;
-        top: 25%;
+        top: 50%;
         @include animation('gameframe-overlay-scroll-up 2s 1s infinite');
         @include invert();
     }
@@ -60,7 +60,7 @@
         width: 100px;
         left: 50%;
         margin-left: -50px;
-        top: 35%;
+        top: 40%;
         @include animation('gameframe-blocked-rotate 2s 1s infinite');
         @include invert();
     }
