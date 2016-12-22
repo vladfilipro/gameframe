@@ -1,0 +1,35 @@
+@import "./../mixins.scss";
+
+.gameframe-blocked {
+    position: absolute;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,1)
+}
+
+@include keyframes(gameframe-blocked-rotate) {
+  0% { @include transform ( rotate3d(0,0,1,0deg) ) }
+  20%, 50% { @include transform ( rotate3d(0,0,1,90deg) ) }
+  70%, 100% { @include transform ( rotate3d(0,0,1,0deg) ) }
+}
+
+.gameframe-blocked-default {
+    background-color: rgba(0,0,0,1);
+    width: 100%;
+    & img {
+        position: absolute;
+        display: block;
+        width: 100px;
+        left: 50%;
+        margin-left: -50px;
+        top: 40%;
+        @include animation('gameframe-blocked-rotate 2s 1s infinite');
+        @include invert();
+    }
+}
