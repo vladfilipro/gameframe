@@ -1,6 +1,7 @@
 'use strict'
 
 let path = require( 'path' )
+let webpack = require( 'webpack' )
 let HtmlWebpackPlugin = require( 'html-webpack-plugin' )
 
 module.exports = {
@@ -45,8 +46,11 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin( {
       template: './src/index.html'
+    } ),
+    new webpack.optimize.UglifyJsPlugin( {
+      mangle: {
+        except: [ 'gameframe' ]
+      }
     } )
-  ],
-  debug: true,
-  devtool: 'source-map'
+  ]
 }

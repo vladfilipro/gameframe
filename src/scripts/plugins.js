@@ -3,6 +3,7 @@
 import { device } from './utils/device.js'
 
 import { iphone } from './plugins/iphone.js'
+import { ipad } from './plugins/ipad.js'
 import { android } from './plugins/android.js'
 import { fallback } from './plugins/fallback.js'
 
@@ -11,6 +12,11 @@ const list = [
     type: [ 'iPhone' ],
     browser: [],
     plugin: iphone
+  },
+  {
+    type: [ 'iPad' ],
+    browser: [],
+    plugin: ipad
   },
   {
     type: [ 'Android' ],

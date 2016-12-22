@@ -7,9 +7,10 @@ import { Blocked } from './../utils/blocked.js'
 export function android ( gf ) {
   let styles = require( './../../styles/plugins/android.scss' )
   styles.use()
+  screen.lock( true )
 
   let blocked = new Blocked( gf.frame )
-  blocked.content( gf.config.get( 'android', 'blocked' ) )
+  blocked.content( gf.config.get( 'android', 'blockedElement' ) )
 
   let requestFullScreen = function ( el ) {
     let fullscreen = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullscreen
@@ -54,6 +55,7 @@ export function android ( gf ) {
 
   this.destroy = () => {
     listener()
+    screen.lock( false )
     blocked.destroy()
     styles.unuse()
   }

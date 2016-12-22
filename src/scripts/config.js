@@ -7,8 +7,8 @@ const defaults = {
   blockLandscape: false,
   fullscreenPortrait: false,
   fullscreenLandscape: false,
-  overlay: null,
-  blocked: null,
+  overlayElement: null,
+  blockedElement: null,
   device: {
     'iphone': {
       fullscreenPortrait: false,

@@ -45,15 +45,6 @@ export function GameFrame () {
     self.plugin = plugin()
     self.plugin.init( self )
 
-    let demo = _document.createElement( 'span' )
-    demo.id = 'demo'
-    demo.style.display = 'block'
-    demo.style.position = 'absolute'
-    demo.style.width = '100%'
-    demo.style.bottom = '0'
-    demo.innerHTML = 'This is a demo for screen control.'
-    self.container.appendChild( demo )
-
     initialized = true
   }
 

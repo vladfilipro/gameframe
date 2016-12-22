@@ -9,9 +9,9 @@ export function iphone ( gf ) {
   styles.use()
 
   let overlay = new Overlay( gf.frame )
-  overlay.content( gf.config.get( 'iphone', 'overlay' ) )
+  overlay.content( gf.config.get( 'iphone', 'overlayElement' ) )
   let blocked = new Blocked( gf.frame )
-  blocked.content( gf.config.get( 'iphone', 'blocked' ) )
+  blocked.content( gf.config.get( 'iphone', 'blockedElement' ) )
 
   // Show / Hide fullscreen overlay
   let prevHeight = screen.size.height()
