@@ -3,7 +3,7 @@
 import { screen } from './../utils/screen.js'
 
 export function fallback () {
-  let styles = require( './../../styles/plugins/fallback.scss' )
+  let styles = require( __dirname + '/../../styles/plugins/fallback.scss' )
   styles.use()
   screen.lock( true )
 

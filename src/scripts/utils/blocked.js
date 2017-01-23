@@ -10,7 +10,7 @@ export function Blocked ( frame ) {
   let content = _document.createElement( 'div' )
   content.classList.add( 'gameframe-blocked-default' )
   let img = _document.createElement( 'img' )
-  img.src = require( './../../images/phone-icon.png' )
+  img.src = require( __dirname + '/../../images/phone-icon.png' )
   content.appendChild( img )
   e.appendChild( content )
 

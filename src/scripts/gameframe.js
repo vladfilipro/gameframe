@@ -12,7 +12,7 @@ import { plugin } from './plugins.js'
 export function GameFrame () {
   let initialized = false
 
-  let styles = require( './../styles/index.scss' )
+  let styles = require( __dirname + '/../styles/index.scss' )
 
   let self = this
 

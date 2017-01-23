@@ -5,7 +5,7 @@ import { Overlay } from './../utils/overlay.js'
 import { Blocked } from './../utils/blocked.js'
 
 export function iphone ( gf ) {
-  let styles = require( './../../styles/plugins/iphone.scss' )
+  let styles = require( __dirname + '/../../styles/plugins/iphone.scss' )
   styles.use()
 
   let overlay = new Overlay( gf.frame )
