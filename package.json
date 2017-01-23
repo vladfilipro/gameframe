@@ -32,6 +32,6 @@
   "main": "./build/gameframe.min.js",
   "scripts": {
     "test": "./node_modules/.bin/webpack-dev-server",
-    "postInstall": "node webpack"
+    "install": "node webpack"
   }
 }
