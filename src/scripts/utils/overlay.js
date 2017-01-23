@@ -10,7 +10,7 @@ export function Overlay ( frame ) {
   let content = _document.createElement( 'div' )
   content.classList.add( 'gameframe-overlay-default' )
   let img = _document.createElement( 'img' )
-  img.src = require( '/../../images/scroll-up.png' )
+  img.src = require( './../../images/scroll-up.png' )
   content.appendChild( img )
   e.appendChild( content )
 

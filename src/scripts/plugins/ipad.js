@@ -4,7 +4,7 @@ import { screen } from './../utils/screen.js'
 import { Blocked } from './../utils/blocked.js'
 
 export function ipad ( gf ) {
-  let styles = require( '/../../styles/plugins/ipad.scss' )
+  let styles = require( './../../styles/plugins/ipad.scss' )
   styles.use()
   screen.lock( true )
 
