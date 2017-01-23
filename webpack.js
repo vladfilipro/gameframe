@@ -1,7 +1,7 @@
 'use strict'
 
 const webpack = require( 'webpack' )
-const config = require( './webpack.config.js' )
+const config = require( __dirname + '/webpack.config.js' )
 
 let compiler = webpack( config )
 

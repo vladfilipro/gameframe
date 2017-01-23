@@ -1,3 +1,3 @@
 'use strict'
 
-require( __dirname + '/scripts' )
+require( '/scripts' )

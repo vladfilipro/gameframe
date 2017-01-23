@@ -1,6 +1,6 @@
 'use strict'
 
-let styles = require( __dirname + '/../styles/index.scss' )
+let styles = require( '/../styles/index.scss' )
 
 import { _window } from './utils/selector.js'
 import { GameFrame } from './gameframe.js'

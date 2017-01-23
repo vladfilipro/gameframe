@@ -5,7 +5,7 @@ import { screen } from './../utils/screen.js'
 import { Blocked } from './../utils/blocked.js'
 
 export function android ( gf ) {
-  let styles = require( __dirname + '/../../styles/plugins/android.scss' )
+  let styles = require( '/../../styles/plugins/android.scss' )
   styles.use()
   screen.lock( true )
 
