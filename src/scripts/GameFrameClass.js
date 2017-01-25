@@ -26,11 +26,12 @@ export function GameFrameClass () {
 
   self.plugin = null
 
+  self.config = new Config()
+
   self.init = () => {
     self.destroy()
 
     styles.use()
-    self.config = new Config()
     self.screen.capture()
 
     self.frame = _document().createElement( 'section' )
@@ -57,7 +58,9 @@ export function GameFrameClass () {
       self.frame = null
       self.plugin.destroy()
       self.plugin = null
-      self.config = null
+
+      self.config = new Config()
+
       styles.unuse()
       initialized = false
     }
