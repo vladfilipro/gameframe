@@ -8,5 +8,19 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
 </head>
 <body>
+    <script>
+        /* globals window, GameFrame */
+        'use strict'
+
+        window.onpageshow = function ( event ) {
+          if ( event.persisted ) {
+            GameFrame.init()
+          }
+        }
+
+        window.onload = function () {
+          GameFrame.init()
+        }
+    </script>
 </body>
 </html>

@@ -6,21 +6,13 @@ let HtmlWebpackPlugin = require( 'html-webpack-plugin' )
 
 module.exports = {
   entry: {
-    gameframe: [
-      'babel-polyfill',
-      './src/gameframe.js'
-    ]
+    gameframe: './src/gameframe.js'
   },
   output: {
     path: __dirname + '/build',
-    filename: '[name].min.js'
-  },
-  devServer: {
-    publicPath: '/',
-    hot: true,
-    host: '0.0.0.0',
-    'display-error-details': true,
-    contentBase: __dirname + '/build'
+    filename: '[name].min.js',
+    libraryTarget: 'umd',
+    library: 'GameFrame'
   },
   module: {
     loaders: [
@@ -47,10 +39,6 @@ module.exports = {
     new HtmlWebpackPlugin( {
       template: './src/index.html'
     } ),
-    new webpack.optimize.UglifyJsPlugin( {
-      mangle: {
-        except: [ 'gameframe' ]
-      }
-    } )
+    new webpack.optimize.UglifyJsPlugin()
   ]
 }

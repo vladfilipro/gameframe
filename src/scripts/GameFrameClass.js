@@ -9,7 +9,7 @@ import { screen } from './utils/screen.js'
 
 import { plugin } from './plugins.js'
 
-export function GameFrame () {
+export function GameFrameClass () {
   let initialized = false
 
   let styles = require( './../styles/index.scss' )
@@ -33,11 +33,11 @@ export function GameFrame () {
     self.config = new Config()
     self.screen.capture()
 
-    self.frame = _document.createElement( 'section' )
+    self.frame = _document().createElement( 'section' )
     self.frame.classList.add( 'gameframe' )
-    _body.appendChild( self.frame )
+    _body().appendChild( self.frame )
 
-    self.container = _document.createElement( 'section' )
+    self.container = _document().createElement( 'section' )
     self.container.classList.add( 'gameframe-container' )
 
     self.frame.appendChild( self.container )
@@ -52,7 +52,7 @@ export function GameFrame () {
     if ( initialized ) {
       self.screen.lock( false )
       self.screen.release()
-      _body.removeChild( self.frame )
+      _body().removeChild( self.frame )
       self.container = null
       self.frame = null
       self.plugin.destroy()

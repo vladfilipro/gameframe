@@ -3,13 +3,13 @@
 import { _document } from './selector.js'
 
 export function Blocked ( frame ) {
-  let e = _document.createElement( 'section' )
+  let e = _document().createElement( 'section' )
   e.classList.add( 'gameframe-blocked' )
   frame.appendChild( e )
 
-  let content = _document.createElement( 'div' )
+  let content = _document().createElement( 'div' )
   content.classList.add( 'gameframe-blocked-default' )
-  let img = _document.createElement( 'img' )
+  let img = _document().createElement( 'img' )
   img.src = require( './../../images/phone-icon.png' )
   content.appendChild( img )
   e.appendChild( content )

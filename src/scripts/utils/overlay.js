@@ -3,13 +3,13 @@
 import { _document } from './selector.js'
 
 export function Overlay ( frame ) {
-  let e = _document.createElement( 'section' )
+  let e = _document().createElement( 'section' )
   e.classList.add( 'gameframe-overlay' )
   frame.appendChild( e )
 
-  let content = _document.createElement( 'div' )
+  let content = _document().createElement( 'div' )
   content.classList.add( 'gameframe-overlay-default' )
-  let img = _document.createElement( 'img' )
+  let img = _document().createElement( 'img' )
   img.src = require( './../../images/scroll-up.png' )
   content.appendChild( img )
   e.appendChild( content )

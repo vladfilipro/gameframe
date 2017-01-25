@@ -19,9 +19,9 @@ export function android ( gf ) {
     }
   }
   let exitFullScreen = function () {
-    let exitfullscreen = _document.exitFullscreen || _document.webkitExitFullscreen || _document.mozExitFullscreen || _document.msExitFullscreen
+    let exitfullscreen = _document().exitFullscreen || _document().webkitExitFullscreen || _document().mozExitFullscreen || _document().msExitFullscreen
     if ( exitfullscreen ) {
-      exitfullscreen.call( _document )
+      exitfullscreen.call( _document() )
     }
   }
   const touchHandler = function () {
@@ -29,11 +29,11 @@ export function android ( gf ) {
   }
   let enableFullScreenOnTouch = ( on ) => {
     if ( on || on === undefined ) {
-      _body.removeEventListener( 'click', touchHandler )
-      _body.addEventListener( 'click', touchHandler )
+      _body().removeEventListener( 'click', touchHandler )
+      _body().addEventListener( 'click', touchHandler )
     } else {
       exitFullScreen()
-      _body.removeEventListener( 'click', touchHandler )
+      _body().removeEventListener( 'click', touchHandler )
     }
   }
 

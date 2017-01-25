@@ -9,21 +9,21 @@ const mouseMoveLockEvent = function ( e ) {
 
 let lock = ( on ) => {
   if ( on || on === undefined ) {
-    _body.removeEventListener( 'touchmove', mouseMoveLockEvent, true )
-    _body.addEventListener( 'touchmove', mouseMoveLockEvent, true )
-    _window.scrollTo( 0, _body.scrollHeight - _window.innerHeight )
+    _body().removeEventListener( 'touchmove', mouseMoveLockEvent, true )
+    _body().addEventListener( 'touchmove', mouseMoveLockEvent, true )
+    _window().scrollTo( 0, _body().scrollHeight - _window().innerHeight )
   } else {
-    _body.removeEventListener( 'touchmove', mouseMoveLockEvent, true )
-    _window.scrollTo( 0, 0 )
+    _body().removeEventListener( 'touchmove', mouseMoveLockEvent, true )
+    _window().scrollTo( 0, 0 )
   }
 }
 
 let getOrientation = () => {
-  return ( _window.innerWidth > _window.innerHeight ) ? 'landscape' : 'portrait'
+  return ( _window().innerWidth > _window().innerHeight ) ? 'landscape' : 'portrait'
 }
 
 let getRatio = () => {
-  return ( getOrientation() === 'landscape' ) ? _window.innerWidth / _window.innerHeight : _window.innerHeight / _window.innerWidth
+  return ( getOrientation() === 'landscape' ) ? _window().innerWidth / _window().innerHeight : _window().innerHeight / _window().innerWidth
 }
 
 let isSquare = () => {
@@ -41,8 +41,8 @@ let size = {
   isSquare: isSquare,
   isRectangular: isRectangular,
   isWide: isWide,
-  width: () => _window.innerWidth,
-  height: () => _window.innerHeight
+  width: () => _window().innerWidth,
+  height: () => _window().innerHeight
 }
 
 let listeners = {}
@@ -56,13 +56,13 @@ let onChange = function ( e ) {
 
 let capture = () => {
   if ( capturing ) {
-    _window.removeEventListener( 'resize', onChange )
+    _window().removeEventListener( 'resize', onChange )
   }
-  _window.addEventListener( 'resize', onChange )
+  _window().addEventListener( 'resize', onChange )
   capturing = true
 }
 let release = () => {
-  _window.removeEventListener( 'resize', onChange )
+  _window().removeEventListener( 'resize', onChange )
   listeners = {}
   capturing = false
 }

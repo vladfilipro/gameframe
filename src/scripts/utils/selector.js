@@ -5,7 +5,7 @@ export let element = ( selector, parent ) => {
   return parent.querySelector( selector )
 }
 
-export let _window = window
-export let _document = window.document
-export let _head = window.head || element( 'head' )
-export let _body = window.body || element( 'body' )
+export let _window = () => window
+export let _document = () => window.document
+export let _head = () => window.head || element( 'head' )
+export let _body = () => window.body || element( 'body' )
