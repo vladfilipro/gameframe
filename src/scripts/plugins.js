@@ -52,6 +52,7 @@ export let plugin = () => {
 
   let output = {
     instance: null,
+    type: () => PluginClass.name,
     init: ( gameframe ) => {
       if ( output.instance ) {
         output.instance.destroy()
