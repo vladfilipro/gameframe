@@ -11,21 +11,25 @@ const list = [
   {
     type: [ 'iPhone' ],
     browser: [],
+    name: 'iphone',
     plugin: iphone
   },
   {
     type: [ 'iPad' ],
     browser: [],
+    name: 'ipad',
     plugin: ipad
   },
   {
     type: [ 'Android' ],
     browser: [],
+    name: 'android',
     plugin: android
   },
   {
     type: [], // all types
     browser: [], // all browsers
+    name: 'desktop',
     plugin: fallback
   }
 ]
@@ -35,6 +39,7 @@ export let plugin = () => {
   let type = deviceDetection.type
   let browser = deviceDetection.browser
   let PluginClass
+  let name
 
   list.forEach( function ( entry ) {
     let typePassed = false
@@ -46,13 +51,14 @@ export let plugin = () => {
       browserPassed = true
     }
     if ( typePassed && browserPassed && !PluginClass ) {
+      name = entry.name
       PluginClass = entry.plugin
     }
   } )
 
   let output = {
     instance: null,
-    type: () => PluginClass.name,
+    type: () => name,
     init: ( gameframe ) => {
       if ( output.instance ) {
         output.instance.destroy()
