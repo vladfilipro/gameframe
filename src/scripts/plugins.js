@@ -56,18 +56,18 @@ export let plugin = () => {
     }
   } )
 
+  let instance = null
+
   let output = {
-    instance: null,
-    type: () => name,
+    type: type,
+    browser: browser,
+    name: name,
     init: ( gameframe ) => {
-      if ( output.instance ) {
-        output.instance.destroy()
-      }
-      output.instance = new PluginClass( gameframe )
+      instance = new PluginClass( gameframe )
     },
     destroy: () => {
-      output.instance.destroy()
-      output.instance = null
+      instance.destroy()
+      instance = null
     }
   }
 

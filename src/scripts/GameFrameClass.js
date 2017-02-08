@@ -4,7 +4,6 @@ import { _document, _body } from './utils/selector.js'
 
 import { Config } from './config.js'
 
-import { device } from './utils/device.js'
 import { screen } from './utils/screen.js'
 
 import { plugin } from './plugins.js'
@@ -19,12 +18,11 @@ export function GameFrameClass () {
   self.config = null
 
   self.screen = screen
-  self.device = device()
 
-  self.frame = null
+  let frame = null
   self.container = null
 
-  self.plugin = null
+  self.device = null
 
   self.config = new Config()
 
@@ -34,17 +32,17 @@ export function GameFrameClass () {
     styles.use()
     self.screen.capture()
 
-    self.frame = _document().createElement( 'section' )
-    self.frame.classList.add( 'gameframe' )
-    _body().appendChild( self.frame )
+    frame = _document().createElement( 'section' )
+    frame.classList.add( 'gameframe' )
+    _body().appendChild( frame )
 
     self.container = _document().createElement( 'section' )
     self.container.classList.add( 'gameframe-container' )
 
-    self.frame.appendChild( self.container )
+    frame.appendChild( self.container )
 
-    self.plugin = plugin()
-    self.plugin.init( self )
+    self.device = plugin()
+    self.device.init( self )
 
     initialized = true
   }
@@ -53,11 +51,11 @@ export function GameFrameClass () {
     if ( initialized ) {
       self.screen.lock( false )
       self.screen.release()
-      _body().removeChild( self.frame )
+      _body().removeChild( frame )
       self.container = null
-      self.frame = null
-      self.plugin.destroy()
-      self.plugin = null
+      frame = null
+      self.device.destroy()
+      self.device = null
 
       self.config = new Config()
 
