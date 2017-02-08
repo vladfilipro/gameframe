@@ -27,40 +27,47 @@ export function GameFrameClass () {
   self.config = new Config()
 
   self.init = () => {
-    self.destroy()
+    return new Promise( function ( resolve ) {
+      self.destroy()
 
-    styles.use()
-    self.screen.capture()
+      styles.use()
+      self.screen.capture()
 
-    self.frame = _document().createElement( 'section' )
-    self.frame.classList.add( 'gameframe' )
-    _body().appendChild( self.frame )
+      self.frame = _document().createElement( 'section' )
+      self.frame.classList.add( 'gameframe' )
+      _body().appendChild( self.frame )
 
-    self.container = _document().createElement( 'section' )
-    self.container.classList.add( 'gameframe-container' )
+      self.container = _document().createElement( 'section' )
+      self.container.classList.add( 'gameframe-container' )
 
-    self.frame.appendChild( self.container )
+      self.frame.appendChild( self.container )
 
-    self.device = plugin()
-    self.device.init( self )
+      self.device = plugin()
+      self.device.init( self )
 
-    initialized = true
+      initialized = true
+
+      resolve( self.container, self.device )
+    } )
   }
 
   self.destroy = () => {
-    if ( initialized ) {
-      self.screen.lock( false )
-      self.screen.release()
-      _body().removeChild( self.frame )
-      self.container = null
-      self.frame = null
-      self.device.destroy()
-      self.device = null
+    return new Promise( function ( resolve ) {
+      if ( initialized ) {
+        self.screen.lock( false )
+        self.screen.release()
+        _body().removeChild( self.frame )
+        self.container = null
+        self.frame = null
+        self.device.destroy()
+        self.device = null
 
-      self.config = new Config()
+        self.config = new Config()
 
-      styles.unuse()
-      initialized = false
-    }
+        styles.unuse()
+        initialized = false
+      }
+      resolve()
+    } )
   }
 }
