@@ -19,7 +19,7 @@ export function GameFrameClass () {
 
   self.screen = screen
 
-  let frame = null
+  self.frame = null
   self.container = null
 
   self.device = null
@@ -32,14 +32,14 @@ export function GameFrameClass () {
     styles.use()
     self.screen.capture()
 
-    frame = _document().createElement( 'section' )
-    frame.classList.add( 'gameframe' )
-    _body().appendChild( frame )
+    self.frame = _document().createElement( 'section' )
+    self.frame.classList.add( 'gameframe' )
+    _body().appendChild( self.frame )
 
     self.container = _document().createElement( 'section' )
     self.container.classList.add( 'gameframe-container' )
 
-    frame.appendChild( self.container )
+    self.frame.appendChild( self.container )
 
     self.device = plugin()
     self.device.init( self )
@@ -51,9 +51,9 @@ export function GameFrameClass () {
     if ( initialized ) {
       self.screen.lock( false )
       self.screen.release()
-      _body().removeChild( frame )
+      _body().removeChild( self.frame )
       self.container = null
-      frame = null
+      self.frame = null
       self.device.destroy()
       self.device = null
 
