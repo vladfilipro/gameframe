@@ -42,7 +42,7 @@ export function GameFrameClass () {
 
       self.frame.appendChild( self.container )
 
-      self.device = plugin( this.config.getPlugins() )
+      self.device = plugin( self.config.getPlugins() )
       self.device.init( self )
 
       initialized = true
