@@ -48,6 +48,9 @@ export let Config = function () {
       self.configuration[key] = value
       return
     }
+    if ( !self.configuration.device[device] ) {
+      self.configuration.device[device] = {}
+    }
     self.configuration.device[device][key] = value
   }
 
