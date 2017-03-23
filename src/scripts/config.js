@@ -10,14 +10,14 @@ const defaults = {
   overlayElement: null,
   blockedElement: null,
   device: {
-    'iphone': {
-      fullscreenPortrait: false,
-      fullscreenLandscape: true
-    },
-    'android': {
-      fullscreenPortrait: false,
-      fullscreenLandscape: true
-    }
+    // 'iphone': {
+    //   fullscreenPortrait: false,
+    //   fullscreenLandscape: true
+    // },
+    // 'android': {
+    //   fullscreenPortrait: false,
+    //   fullscreenLandscape: true
+    // }
   },
   plugins: {}
 }
