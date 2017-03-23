@@ -18,7 +18,8 @@ const defaults = {
       fullscreenPortrait: false,
       fullscreenLandscape: true
     }
-  }
+  },
+  plugins: {}
 }
 
 export let Config = function () {
@@ -28,6 +29,18 @@ export let Config = function () {
 
   self.init = ( config ) => {
     self.configuration = merge( self.configuration, config )
+  }
+
+  self.setPlugin = ( key, value ) => {
+    self.configuration.plugins[key] = value
+  }
+  self.removePlugin = ( key ) => {
+    try {
+      delete self.configuration.plugins[key]
+    } catch ( e ) {}
+  }
+  self.getPlugins = () => {
+    return self.configuration.plugins
   }
 
   self.set = ( device, key, value ) => {
