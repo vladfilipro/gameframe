@@ -29,7 +29,7 @@ export let device = () => {
   }
 
   // We are in an iframe so we should treat it like desktop
-  if ( window.location.href !== window.top.location.href ) {
+  if ( window !== window.top ) {
     device = 'other'
   }
 
