@@ -28,6 +28,11 @@ export let device = () => {
     device = 'other'
   }
 
+  // We are in an iframe so we should treat it like desktop
+  if ( window.location.href !== window.top.location.href ) {
+    device = 'other'
+  }
+
   // get browser
   if ( ua.indexOf( 'OPR' ) > 0 || ua.indexOf( 'Opera' ) > 0 ) {
     browser = 'Opera'
